@@ -3,164 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohammed Abdul Awan | Cybersecurity Portfolio</title>
+    <title>Mohammed Abdul Awan | SOC Portfolio</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
-            --bg-dark: #0a0b10;
-            --card-bg: #161b22;
-            --accent-blue: #58a6ff;
-            --text-main: #c9d1d9;
-            --text-dim: #8b949e;
-            --terminal-green: #3fb950;
+            --bg-dark: #05070a;
+            --card-bg: rgba(22, 27, 34, 0.8);
+            --accent-blue: #00d4ff;
+            --terminal-green: #00ff41;
+            --text-main: #e6edf3;
+            --glow: 0 0 15px rgba(0, 212, 255, 0.4);
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Roboto, sans-serif;
             background-color: var(--bg-dark);
+            background-image: 
+                linear-gradient(rgba(0, 212, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 212, 255, 0.05) 1px, transparent 1px);
+            background-size: 30px 30px; /* This creates the Cyber Grid */
             color: var(--text-main);
             margin: 0;
-            line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
 
+        /* ELITE HEADER */
         header {
             text-align: center;
-            padding: 60px 0;
+            padding: 80px 0;
+            background: radial-gradient(circle, rgba(0,212,255,0.1) 0%, transparent 70%);
+        }
+
+        .glitch-box {
+            display: inline-block;
+            border: 1px solid var(--accent-blue);
+            padding: 10px 20px;
+            box-shadow: var(--glow);
+            font-family: 'Courier New', monospace;
+            color: var(--terminal-green);
+            margin-bottom: 20px;
+        }
+
+        h1 { font-size: 3rem; margin: 0; letter-spacing: 2px; text-transform: uppercase; }
+        .role-tag { color: var(--accent-blue); font-weight: bold; font-size: 1.3rem; margin-top: 10px; }
+
+        /* PROJECT CARDS WITH IMAGE FOCUS */
+        .project-card {
+            background: var(--card-bg);
+            border: 1px solid #30363d;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 40px;
+            backdrop-filter: blur(10px);
+            transition: 0.4s;
+        }
+
+        .project-card:hover { border-color: var(--accent-blue); box-shadow: var(--glow); }
+
+        .project-header {
+            background: #1f242c;
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             border-bottom: 1px solid #30363d;
         }
 
-        .terminal-text {
-            font-family: 'Courier New', Courier, monospace;
-            color: var(--terminal-green);
-            font-size: 1.2rem;
-            margin-bottom: 10px;
+        .project-body { display: grid; grid-template-columns: 1.2fr 1fr; gap: 30px; padding: 30px; }
+        
+        /* Placeholder for your lab images */
+        .lab-visual {
+            background: #000;
+            border: 1px solid var(--accent-blue);
+            border-radius: 8px;
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
         }
 
-        h1 { font-size: 2.5rem; margin: 10px 0; color: white; }
-        .subtitle { color: var(--accent-blue); font-weight: bold; font-size: 1.1rem; }
-
-        .summary-box {
-            background: var(--card-bg);
-            padding: 30px;
-            border-radius: 12px;
-            margin: 40px 0;
-            border-left: 4px solid var(--accent-blue);
+        /* SKILLS DASHBOARD */
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 30px; }
+        .skill-item {
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
         }
 
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-
-        .card {
-            background: var(--card-bg);
-            padding: 25px;
-            border-radius: 12px;
-            border: 1px solid #30363d;
+        .btn {
+            background: transparent;
+            border: 1px solid var(--accent-blue);
+            color: var(--accent-blue);
+            padding: 12px 25px;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
             transition: 0.3s;
         }
 
-        .card:hover { border-color: var(--accent-blue); transform: translateY(-5px); }
+        .btn:hover { background: var(--accent-blue); color: #000; box-shadow: var(--glow); }
 
-        h2 { border-bottom: 2px solid var(--accent-blue); display: inline-block; padding-bottom: 5px; margin-bottom: 25px; }
-
-        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
-        td { padding: 10px; border-bottom: 1px solid #30363d; }
-        .skill-name { color: var(--accent-blue); font-weight: bold; }
-
-        .btn {
-            display: inline-block;
-            background: var(--accent-blue);
-            color: var(--bg-dark);
-            padding: 10px 20px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 15px;
-        }
-
-        .social-links a { color: var(--text-dim); margin: 0 15px; font-size: 1.5rem; transition: 0.3s; }
-        .social-links a:hover { color: var(--accent-blue); }
-
-        .badge {
-            background: #238636;
-            color: white;
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            margin-right: 5px;
-        }
+        @media (max-width: 768px) { .project-body { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
 
 <div class="container">
     <header>
-        <div class="terminal-text">> system_init --role "SOC ANALYST"</div>
+        <div class="glitch-box">AUTHENTICATED: SOC_OPERATOR_AWAN</div>
         <h1>Mohammed Abdul Awan</h1>
-        <div class="subtitle">SOC Analyst | Cybersecurity Specialist | SIEM & XDR Expert</div>
-        <p><i class="fas fa-map-marker-alt"></i> Dubai, UAE (Open to Relocation)</p>
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/abdulawan-cyber"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/Awan0727"><i class="fab fa-github"></i></a>
-        </div>
+        <div class="role-tag">SOC Analyst | Cybersecurity Specialist | SIEM & XDR Expert</div>
+        <p><i class="fas fa-shield-alt"></i> Targeting SOC Operations & Cyber Defense Roles</p>
+        <p><i class="fas fa-map-marker-alt"></i> Dubai, UAE | mohmmedabdulawan@gmail.com</p>
     </header>
 
-    <section class="summary-box">
-        <h2>Professional Profile</h2>
-        <p>Aspiring SOC Analyst (L1) with a background in HR Administration and IT Onboarding, bringing strong expertise in access management, compliance processes, and structured documentation aligned with security operations. Hands-on exposure to SIEM tools such as <strong>Splunk & Wazuh</strong>, with practical knowledge in log monitoring, alert triage, and threat detection.</p>
-    </section>
-
-    <div class="grid">
-        <div class="card">
-            <h2><i class="fas fa-graduation-cap"></i> Education</h2>
-            <p><strong>B.Tech in Information Technology</strong><br>
-            TKR College of Engineering & Technology (JNTUH) | 2024</p>
-            <p><strong>Diploma in EEE</strong><br>
-            TKR College of Engineering & Technology (SBTET) | 2021</p>
-        </div>
-
-        <div class="card">
-            <h2><i class="fas fa-certificate"></i> Certifications</h2>
-            <ul>
-                <li>Cybersecurity & Ethical Hacking - Boston Institute of Analytics</li>
-                <li>Cybersecurity & Ethical Hacking - Udemy</li>
-                <li>SOC Analyst Training (In Progress)</li>
-            </ul>
-        </div>
-    </div>
-
-    <section style="margin-top: 40px;">
-        <div class="card" style="border-left: 4px solid var(--terminal-green);">
-            <h2><i class="fas fa-project-diagram"></i> Featured Project</h2>
-            <h3>Enterprise SOC Home Lab: Real-Time Detection</h3>
-            <p>Deployed a full-stack Security Operations Center using <strong>Wazuh</strong> and <strong>Splunk</strong>. Simulated Nmap scans, Metasploit exploits, and Brute Force attacks to visualize telemetry and create defensive alerts.</p>
-            <span class="badge">Wazuh</span> <span class="badge">Splunk</span> <span class="badge">Kali Linux</span>
-            <br>
-            <a href="https://github.com/Awan0727/Enterprise-SOC-Wazuh-Splunk" class="btn" target="_blank">View Live Repo</a>
+    <section>
+        <h2 style="text-align: center;"><i class="fas fa-microchip"></i> Technical Stack</h2>
+        <div class="skills-grid">
+            <div class="skill-item"><strong>SIEM/XDR</strong><br>Wazuh & Splunk</div>
+            <div class="skill-item"><strong>Threat Hunting</strong><br>Nmap & Metasploit</div>
+            <div class="skill-item"><strong>Infrastructure</strong><br>Linux & Windows Server</div>
+            <div class="skill-item"><strong>Compliance</strong><br>IAM & Audit Docs</div>
         </div>
     </section>
 
-    <div class="grid" style="margin-top: 20px;">
-        <div class="card">
-            <h2><i class="fas fa-tools"></i> Cyber Toolbox</h2>
-            <table>
-                <tr><td class="skill-name">SIEM/XDR</td><td>Splunk, Wazuh</td></tr>
-                <tr><td class="skill-name">Tools</td><td>Nmap, Metasploit, Hydra</td></tr>
-                <tr><td class="skill-name">OS</td><td>Kali Linux, Windows Server</td></tr>
-                <tr><td class="skill-name">Compliance</td><td>Access Control, IAM, Audit Docs</td></tr>
-            </table>
+    <section style="margin-top: 60px;">
+        <div class="project-card">
+            <div class="project-header">
+                <span style="color: var(--accent-blue); font-weight: bold;">PROJECT_ID: 01</span>
+                <span style="font-family: monospace; color: var(--text-dim);">STATUS: ACTIVE_DEFENSE</span>
+            </div>
+            <div class="project-body">
+                <div class="lab-visual">
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800" alt="Lab Interface" style="width:100%; height:100%; object-fit:cover; opacity: 0.7;">
+                    <div style="position:absolute; color:var(--accent-blue); font-family:monospace; text-align:center;">
+                        [ VIEWING SIEM TELEMETRY ]
+                    </div>
+                </div>
+                <div>
+                    <h3>Enterprise SOC Deployment</h3>
+                    <p>Building a full-scale detection lab to monitor, analyze, and mitigate advanced persistent threats.</p>
+                    <ul style="font-size: 0.9rem; color: var(--text-dim);">
+                        <li>Deployed Wazuh Manager for XDR telemetry.</li>
+                        <li>Configured Splunk for advanced log correlation.</li>
+                        <li>Mapped attack surfaces to MITRE ATT&CK.</li>
+                    </ul>
+                    <a href="https://github.com/Awan0727/Enterprise-SOC-Wazuh-Splunk" class="btn" target="_blank">Access Repository</a>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="card">
-            <h2><i class="fas fa-envelope"></i> Let's Connect</h2>
-            <p>I am looking for SOC Analyst L1 or Cybersecurity Junior roles in Dubai.</p>
-            <p><strong>Email:</strong> mohmmedabdulawan@gmail.com</p>
-            <a href="https://www.linkedin.com/in/abdulawan-cyber" class="btn" target="_blank">Message on LinkedIn</a>
+    <footer style="text-align: center; margin-top: 100px; padding: 40px; border-top: 1px solid #30363d; color: var(--text-dim);">
+        <p>SEC_PORTFOLIO v2.0 | &copy; 2026 Mohammed Abdul Awan</p>
+        <div style="font-size: 1.5rem; margin-top: 20px;">
+            <a href="https://www.linkedin.com/in/abdulawan-cyber" style="color: var(--text-dim); margin: 0 10px;"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/Awan0727" style="color: var(--text-dim); margin: 0 10px;"><i class="fab fa-github"></i></a>
         </div>
-    </div>
-
-    <footer style="text-align: center; margin-top: 60px; color: var(--text-dim);">
-        <p>&copy; 2026 Mohammed Abdul Awan | Built for Cybersecurity Specialist</p>
     </footer>
 </div>
 

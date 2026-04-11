@@ -8,11 +8,11 @@
     <style>
         :root {
             --bg-dark: #020408;
-            --card-bg: rgba(13, 17, 23, 0.9);
+            --card-bg: rgba(13, 17, 23, 0.95); /* Slightly darker cards */
             --accent-cyan: #00f2ff;
             --terminal-green: #00ff41;
             --text-main: #e6edf3;
-            --glow: 0 0 20px rgba(0, 242, 255, 0.3);
+            --glow: 0 0 20px rgba(0, 242, 255, 0.4); /* Stronger glow */
         }
 
         body {
@@ -49,7 +49,7 @@
         h1 { font-size: 3.2rem; margin: 10px 0; text-transform: uppercase; letter-spacing: 3px; text-shadow: var(--glow); }
         .tagline { color: var(--accent-cyan); font-weight: 300; font-size: 1.3rem; letter-spacing: 2px; margin-top: 10px; }
 
-        .cyber-grid { display: grid; grid-template-columns: 2.2fr 1fr; gap: 30px; margin-top: 50px; }
+        .cyber-grid { display: grid; grid-template-columns: 2.5fr 1fr; gap: 30px; margin-top: 50px; }
 
         .section-title {
             color: var(--accent-cyan);
@@ -70,6 +70,44 @@
         }
 
         .card:hover { border-color: var(--accent-cyan); box-shadow: var(--glow); }
+
+        /* Professional Image Layout */
+        .project-details {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr; /* Image on left, text on right */
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .project-visual {
+            background: #000;
+            border: 1px solid var(--accent-cyan);
+            border-radius: 4px;
+            overflow: hidden;
+            height: 250px; /* Maintain clean aspect ratio */
+            position: relative;
+        }
+
+        .project-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Zooms/crops to fill space cleanly */
+            opacity: 0.8;
+            transition: 0.4s;
+        }
+
+        .project-visual:hover img { opacity: 1; }
+
+        /* Status tags */
+        .ops-tags { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 15px;}
+        .ops-tag {
+            font-family: monospace;
+            color: var(--terminal-green);
+            font-size: 0.8rem;
+            background: rgba(0, 255, 65, 0.05);
+            padding: 3px 8px;
+            border: 1px solid rgba(0, 255, 65, 0.1);
+        }
 
         .timeline-item {
             border-left: 2px solid rgba(0, 242, 255, 0.2);
@@ -100,9 +138,6 @@
             transition: 0.3s;
         }
 
-        .cert-badge:hover { background: rgba(0, 242, 255, 0.1); border-color: var(--accent-cyan); }
-        .cert-icon { font-size: 1.5rem; color: var(--accent-cyan); }
-
         .btn {
             background: transparent;
             color: var(--accent-cyan);
@@ -111,7 +146,7 @@
             text-decoration: none;
             font-weight: bold;
             display: inline-block;
-            margin-top: 20px;
+            margin-top: 25px;
             text-transform: uppercase;
             letter-spacing: 1px;
             transition: 0.3s;
@@ -119,7 +154,10 @@
 
         .btn:hover { background: var(--accent-cyan); color: #000; box-shadow: var(--glow); }
 
-        @media (max-width: 768px) { .cyber-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 768px) { 
+            .cyber-grid { grid-template-columns: 1fr; } 
+            .project-details { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
@@ -129,9 +167,6 @@
         <div class="status-bar">> SESSION: ACTIVE | USER: M_ABDUL_AWAN</div>
         <h1>Mohammed Abdul Awan</h1>
         <div class="tagline">Cyber Defense & Security Operations Specialist</div>
-        <p style="color: #8b949e; max-width: 750px; margin: 20px auto; line-height: 1.8;">
-            Focused on **SOC L1 Operations**, SIEM Analysis, and Incident Response. Expert in technical documentation and compliance standards with deep hands-on experience in **Wazuh** and **Splunk** ecosystems.
-        </p>
     </header>
 
     <div class="cyber-grid">
@@ -140,13 +175,27 @@
                 <h2 class="section-title">Operational Security Lab</h2>
                 <div class="card">
                     <h3 style="margin-top:0;">Hybrid SIEM Monitoring Dashboard</h3>
-                    <p>Designed and deployed a live monitoring environment using **Wazuh** and **Splunk** to detect and visualize real-time attack telemetry.</p>
-                    <div style="display: flex; gap: 15px; margin: 20px 0;">
-                        <span style="color:var(--terminal-green); font-family:monospace;">[ LOG_TRIAGE ]</span>
-                        <span style="color:var(--terminal-green); font-family:monospace;">[ ALERT_FLOW ]</span>
-                        <span style="color:var(--terminal-green); font-family:monospace;">[ THREAT_HUNT ]</span>
+                    
+                    <div class="project-details">
+                        <div class="project-visual">
+                            <img src="https://images.unsplash.com/photo-1558494949-ef010bcb72a3?auto=format&fit=crop&w=800" alt="SIEM Interface Placeholder">
+                            <div style="position: absolute; color: var(--accent-cyan); font-family: monospace; font-size: 0.7rem; top: 10px; left: 10px; background: rgba(0,0,0,0.8); padding: 2px 5px;">
+                                [ SIEM_VISUALIZATION ]
+                            </div>
+                        </div>
+                        <div>
+                            <p style="margin-top:0; font-size: 0.95rem; color: #8b949e;">
+                                Architected and maintained a live security monitoring environment integrating **Wazuh (XDR)** and **Splunk (SIEM)**. This environment ingests raw telemetry from Kali endpoints to detect, analyze, and visualize real-time attack patterns.
+                            </p>
+                            <div class="ops-tags">
+                                <span class="ops-tag">[ LOG_CORRELATION ]</span>
+                                <span class="ops-tag">[ ALERT_TUNING ]</span>
+                                <span class="ops-tag">[ DEVOPS ]</span>
+                            </div>
+                        </div>
                     </div>
-                    <a href="https://github.com/Awan0727/Enterprise-SOC-Wazuh-Splunk" class="btn" target="_blank">Access Repository</a>
+                    
+                    <a href="https://github.com/Awan0727/Enterprise-SOC-Wazuh-Splunk" class="btn" target="_blank">Access Intelligence Repo</a>
                 </div>
             </section>
 
@@ -167,15 +216,15 @@
             <section>
                 <h2 class="section-title">Verified Certs</h2>
                 <div class="cert-badge">
-                    <i class="fas fa-shield-alt cert-icon"></i>
+                    <i class="fas fa-shield-alt cert-icon" style="color: var(--accent-cyan);"></i>
                     <div><strong>Cybersecurity & Ethical Hacking</strong><br><small>Boston Institute of Analytics</small></div>
                 </div>
                 <div class="cert-badge">
-                    <i class="fas fa-user-shield cert-icon"></i>
+                    <i class="fas fa-user-shield cert-icon" style="color: var(--accent-cyan);"></i>
                     <div><strong>Cybersecurity Expert</strong><br><small>Udemy Professional</small></div>
                 </div>
                 <div class="cert-badge">
-                    <i class="fas fa-microchip cert-icon"></i>
+                    <i class="fas fa-microchip cert-icon" style="color: var(--accent-cyan);"></i>
                     <div><strong>CompTIA Security+</strong><br><small>Preparation in Progress</small></div>
                 </div>
             </section>
@@ -185,17 +234,13 @@
                 <div class="card">
                     <p><i class="fas fa-envelope" style="color:var(--accent-cyan);"></i> mohmmedabdulawan@gmail.com</p>
                     <p><i class="fas fa-map-marker-alt" style="color:var(--accent-cyan);"></i> Dubai, UAE</p>
-                    <div style="display:flex; gap: 20px; margin-top: 25px; font-size: 1.6rem;">
-                        <a href="https://github.com/Awan0727" style="color:white; transition: 0.3s;" onmouseover="this.style.color='#00f2ff'" onmouseout="this.style.color='white'"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/abdulawan-cyber" style="color:white; transition: 0.3s;" onmouseover="this.style.color='#00f2ff'" onmouseout="this.style.color='white'"><i class="fab fa-linkedin"></i></a>
-                    </div>
                 </div>
             </section>
         </aside>
     </div>
 
     <footer style="text-align: center; padding: 80px 0; color: #444; font-family: monospace;">
-        <p>> END_OF_TRANSMISSION | PORTFOLIO_V3.1</p>
+        <p>> END_OF_TRANSMISSION | PORTFOLIO_V3.2</p>
     </footer>
 </div>
 

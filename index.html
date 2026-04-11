@@ -3,65 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohammed Abdul Awan | SOC Analyst</title>
+    <title>Mohammed Abdul Awan | Cybersecurity</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&family=Great+Vibes&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&family=Alex+Brush&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-main: #020617;
-            --accent-cyan: #00f2ff;
-            --grid-color: rgba(0, 242, 255, 0.15); /* Increased Grid Visibility */
-            --glass-card: rgba(15, 23, 42, 0.85);
-            --text-silver: #cbd5e1;
+            --bg-color: #050a14; /* Deep Navy */
+            --accent-glow: #00d4ff; 
+            --grid-line: rgba(0, 212, 255, 0.2); 
+            --card-bg: rgba(10, 20, 40, 0.95);
         }
 
         body {
-            background-color: var(--bg-main);
-            color: white;
+            background-color: var(--bg-color);
+            color: #ffffff;
             margin: 0;
             font-family: 'Montserrat', sans-serif;
-            overflow-x: hidden;
-            
-            /* HIGH CLARITY CYBER GRID */
+            /* Visible but clean Cyber Grid */
             background-image: 
-                linear-gradient(var(--grid-color) 1.5px, transparent 1.5px),
-                linear-gradient(90deg, var(--grid-color) 1.5px, transparent 1.5px);
-            background-size: 50px 50px;
-            background-attachment: fixed;
+                linear-gradient(var(--grid-line) 1px, transparent 1px),
+                linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+            background-size: 60px 60px;
         }
 
-        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+        .container { max-width: 950px; margin: 0 auto; padding: 40px 20px; }
 
-        /* HEADER */
         header {
             text-align: center;
-            padding: 60px 20px;
-            background: radial-gradient(circle, rgba(0, 242, 255, 0.1) 0%, transparent 70%);
-            border: 2px solid var(--accent-cyan);
-            border-radius: 24px;
-            backdrop-filter: blur(12px);
-            box-shadow: 0 0 30px rgba(0, 242, 255, 0.2);
+            padding: 50px 20px;
+            background: var(--card-bg);
+            border: 2px solid var(--accent-glow);
+            border-radius: 15px;
+            box-shadow: 0 0 25px rgba(0, 212, 255, 0.1);
         }
 
-        /* NEAT, ROUNDED PRINT NAME */
+        /* ROUNDED PRINT NAME */
         h1 {
             font-family: 'Quicksand', sans-serif;
             font-size: 3.5rem;
             margin: 0;
-            color: white;
-            text-shadow: 0 0 15px var(--accent-cyan);
+            color: #ffffff;
+            letter-spacing: 1px;
         }
 
-        /* CLEAN SCRIPT DESCRIPTIONS */
-        .script-title {
-            font-family: 'Great Vibes', cursive;
-            font-size: 2.2rem;
-            color: var(--accent-cyan);
+        /* CLEAN CURSIVE SCRIPT */
+        .script-subtitle {
+            font-family: 'Alex Brush', cursive;
+            font-size: 2.5rem;
+            color: var(--accent-glow);
             display: block;
-            margin-top: 10px;
+            margin-top: 5px;
         }
 
-        .contact-row {
+        .contact-box {
             display: flex;
             justify-content: center;
             gap: 15px;
@@ -69,27 +63,123 @@
             flex-wrap: wrap;
         }
 
-        .btn-cyber {
+        .link-btn {
             padding: 10px 20px;
-            border: 1px solid var(--accent-cyan);
-            background: rgba(0, 242, 255, 0.05);
+            border: 1px solid var(--accent-glow);
+            border-radius: 5px;
             color: white;
             text-decoration: none;
-            border-radius: 8px;
             font-size: 0.9rem;
+            background: rgba(0, 212, 255, 0.05);
             transition: 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 8px;
         }
 
-        .btn-cyber:hover {
-            background: var(--accent-cyan);
+        .link-btn:hover {
+            background: var(--accent-glow);
             color: #000;
-            box-shadow: 0 0 20px var(--accent-cyan);
         }
 
-        /* MAIN CONTENT */
-        .card {
-            background: var(--glass-card);
-            border: 1px solid rgba(255, 25
+        /* PROJECT SECTION */
+        .project-section {
+            margin-top: 50px;
+            background: var(--card-bg);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+        }
+
+        .project-img {
+            width: 100%;
+            height: 320px;
+            background: url('https://images.pexels.com/photos/5380664/pexels-photo-5380664.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') center/cover;
+            border-bottom: 3px solid var(--accent-glow);
+        }
+
+        .project-text { padding: 30px; }
+
+        .info-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .info-card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 5px solid var(--accent-glow);
+        }
+
+        h2 { font-family: 'Quicksand', sans-serif; font-size: 1.6rem; margin-top: 0; }
+
+        ul { list-style: none; padding: 0; }
+        ul li { 
+            font-family: 'Alex Brush', cursive; 
+            font-size: 1.8rem; 
+            margin-bottom: 10px;
+            color: #d1d5db;
+        }
+
+        footer {
+            margin-top: 60px;
+            padding: 30px;
+            text-align: center;
+            border-top: 1px solid var(--grid-line);
+            font-size: 0.9rem;
+            color: #9ca3af;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Mohammed Abdul Awan</h1>
+        <span class="script-subtitle">Cybersecurity Specialist</span>
+        
+        <div class="contact-box">
+            <a href="mailto:mohmmedabdulawan@gmail.com" class="link-btn"><i class="fas fa-envelope"></i> Email</a>
+            <a href="https://github.com/Awan0727" class="link-btn" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://linkedin.com/in/abdulawan-cyber" class="link-btn" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <div class="link-btn" style="cursor:default;"><i class="fas fa-plane"></i> Open for Relocation</div>
+        </div>
+    </header>
+
+    <div class="project-section">
+        <div class="project-img"></div>
+        <div class="project-text">
+            <h2>Operational Lab: Wazuh & Splunk</h2>
+            <p style="line-height:1.6; color:#9ca3af;">
+                Architecting active defense systems that monitor enterprise telemetry in real-time. 
+                Focused on threat detection, automated incident response, and security orchestration.
+            </p>
+        </div>
+    </div>
+
+    <div class="info-columns">
+        <div class="info-card">
+            <h2>Qualifications</h2>
+            <ul>
+                <li>B.Tech in Information Technology</li>
+                <li>Diploma in Electrical & Electronics</li>
+                <li>Cyber & Ethical Hacking - BIA</li>
+            </ul>
+        </div>
+        <div class="info-card">
+            <h2>Expertise</h2>
+            <ul>
+                <li>SIEM & XDR Engineering</li>
+                <li>Threat Hunting & Triage</li>
+                <li>Network Security Analysis</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        PAGE IS ACCESSED BY MOHAMMED ABDUL AWAN - CYBERSECURITY SPECIALIST
+    </footer>
+</div>
+
+</body>
+</html>

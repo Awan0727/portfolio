@@ -3,59 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohammed Abdul Awan | Cybersecurity</title>
+    <title>Mohammed Abdul Awan | SOC Specialist</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&family=Alex+Brush&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&family=Outfit:wght@300;500&family=JetBrains+Mono&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #050a14; /* Deep Navy */
-            --accent-glow: #00d4ff; 
-            --grid-line: rgba(0, 212, 255, 0.2); 
-            --card-bg: rgba(10, 20, 40, 0.95);
+            --deep-space: #020617;
+            --wave-blue: #1e3a8a;
+            --cyber-cyan: #00f2ff;
+            --glass: rgba(15, 23, 42, 0.8);
+            --border: rgba(0, 242, 255, 0.3);
         }
 
         body {
-            background-color: var(--bg-color);
+            background: var(--deep-space);
             color: #ffffff;
             margin: 0;
-            font-family: 'Montserrat', sans-serif;
-            /* Visible but clean Cyber Grid */
-            background-image: 
-                linear-gradient(var(--grid-line) 1px, transparent 1px),
-                linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-            background-size: 60px 60px;
+            font-family: 'Outfit', sans-serif; /* Clean professional handwriting style */
+            overflow-x: hidden;
+            /* Cyber Wave Animated Background */
+            background: linear-gradient(135deg, #020617 0%, #0f172a 50%, #1e3a8a 100%);
+            background-attachment: fixed;
         }
 
-        .container { max-width: 950px; margin: 0 auto; padding: 40px 20px; }
+        /* The Cyber Grid Overlay */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: 
+                linear-gradient(var(--border) 1px, transparent 1px),
+                linear-gradient(90deg, var(--border) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+            opacity: 0.2;
+            z-index: 0;
+        }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; position: relative; z-index: 1; }
 
         header {
             text-align: center;
-            padding: 50px 20px;
-            background: var(--card-bg);
-            border: 2px solid var(--accent-glow);
-            border-radius: 15px;
-            box-shadow: 0 0 25px rgba(0, 212, 255, 0.1);
+            padding: 80px 20px;
+            background: var(--glass);
+            border: 1px solid var(--border);
+            border-radius: 30px;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 0 50px rgba(0, 242, 255, 0.1);
         }
 
-        /* ROUNDED PRINT NAME */
+        /* NEAT ROUNDED PRINT */
         h1 {
             font-family: 'Quicksand', sans-serif;
-            font-size: 3.5rem;
+            font-size: 3.8rem;
             margin: 0;
-            color: #ffffff;
-            letter-spacing: 1px;
+            background: linear-gradient(to bottom, #fff, var(--cyber-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 10px 20px rgba(0,0,0,0.3);
         }
 
-        /* CLEAN CURSIVE SCRIPT */
-        .script-subtitle {
-            font-family: 'Alex Brush', cursive;
-            font-size: 2.5rem;
-            color: var(--accent-glow);
-            display: block;
-            margin-top: 5px;
+        .subtitle {
+            font-size: 1.4rem;
+            color: var(--cyber-cyan);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-top: 10px;
+            font-weight: 300;
         }
 
-        .contact-box {
+        .nav-links {
             display: flex;
             justify-content: center;
             gap: 15px;
@@ -63,71 +80,100 @@
             flex-wrap: wrap;
         }
 
-        .link-btn {
-            padding: 10px 20px;
-            border: 1px solid var(--accent-glow);
-            border-radius: 5px;
+        .link-pill {
+            padding: 10px 25px;
+            border-radius: 50px;
+            border: 1px solid var(--border);
             color: white;
             text-decoration: none;
-            font-size: 0.9rem;
-            background: rgba(0, 212, 255, 0.05);
+            background: rgba(255,255,255,0.05);
             transition: 0.3s;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        .link-btn:hover {
-            background: var(--accent-glow);
+        .link-pill:hover {
+            background: var(--cyber-cyan);
             color: #000;
+            box-shadow: 0 0 20px var(--cyber-cyan);
         }
 
-        /* PROJECT SECTION */
-        .project-section {
+        /* PROJECT CARDS */
+        .project-card {
             margin-top: 50px;
-            background: var(--card-bg);
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: var(--glass);
+            border-radius: 25px;
+            border: 1px solid var(--border);
             overflow: hidden;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
         }
 
         .project-img {
-            width: 100%;
-            height: 320px;
-            background: url('https://images.pexels.com/photos/5380664/pexels-photo-5380664.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') center/cover;
-            border-bottom: 3px solid var(--accent-glow);
+            background: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1000') center/cover;
+            min-height: 400px;
         }
 
-        .project-text { padding: 30px; }
+        .project-info { padding: 40px; }
 
-        .info-columns {
+        .section-title {
+            font-family: 'Quicksand', sans-serif;
+            color: var(--cyber-cyan);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--cyber-cyan);
+            padding-left: 15px;
+        }
+
+        /* SKILLS GRID */
+        .skills-container {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
             margin-top: 40px;
         }
 
-        .info-card {
-            background: var(--card-bg);
-            padding: 25px;
-            border-radius: 15px;
-            border-left: 5px solid var(--accent-glow);
+        .skill-box {
+            background: var(--glass);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: 0.3s;
         }
 
-        h2 { font-family: 'Quicksand', sans-serif; font-size: 1.6rem; margin-top: 0; }
+        .skill-box:hover { border-color: var(--cyber-cyan); transform: translateY(-5px); }
+
+        .skill-header { color: var(--cyber-cyan); font-weight: bold; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
 
         ul { list-style: none; padding: 0; }
-        ul li { 
-            font-family: 'Alex Brush', cursive; 
-            font-size: 1.8rem; 
-            margin-bottom: 10px;
-            color: #d1d5db;
+        ul li { margin-bottom: 10px; color: #cbd5e1; font-size: 0.95rem; display: flex; align-items: flex-start; gap: 10px; }
+        ul li::before { content: "▹"; color: var(--cyber-cyan); }
+
+        .tag {
+            font-family: 'JetBrains Mono', monospace;
+            background: rgba(0, 242, 255, 0.1);
+            color: var(--cyber-cyan);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
         }
 
         footer {
-            margin-top: 60px;
-            padding: 30px;
+            margin-top: 100px;
+            padding: 40px;
             text-align: center;
-            border-top: 1px solid var(--grid-line);
-            font-size: 0.9rem;
-            color: #9ca3af;
+            background: rgba(0,0,0,0.5);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            color: #64748b;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 850px) {
+            .project-card { grid-template-columns: 1fr; }
+            h1 { font-size: 2.5rem; }
         }
     </style>
 </head>
@@ -136,50 +182,42 @@
 <div class="container">
     <header>
         <h1>Mohammed Abdul Awan</h1>
-        <span class="script-subtitle">Cybersecurity Specialist</span>
+        <div class="subtitle">Security Operations Specialist</div>
         
-        <div class="contact-box">
-            <a href="mailto:mohmmedabdulawan@gmail.com" class="link-btn"><i class="fas fa-envelope"></i> Email</a>
-            <a href="https://github.com/Awan0727" class="link-btn" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-            <a href="https://linkedin.com/in/abdulawan-cyber" class="link-btn" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-            <div class="link-btn" style="cursor:default;"><i class="fas fa-plane"></i> Open for Relocation</div>
+        <div class="nav-links">
+            <a href="mailto:mohmmedabdulawan@gmail.com" class="link-pill"><i class="fas fa-envelope"></i> Email</a>
+            <a href="https://github.com/Awan0727" class="link-pill" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://linkedin.com/in/abdulawan-cyber" class="link-pill" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <div class="link-pill" style="cursor: default;"><i class="fas fa-plane"></i> Open for Relocation</div>
         </div>
     </header>
 
-    <div class="project-section">
+    <div class="project-card">
         <div class="project-img"></div>
-        <div class="project-text">
-            <h2>Operational Lab: Wazuh & Splunk</h2>
-            <p style="line-height:1.6; color:#9ca3af;">
-                Architecting active defense systems that monitor enterprise telemetry in real-time. 
-                Focused on threat detection, automated incident response, and security orchestration.
+        <div class="project-info">
+            <h2 class="section-title">Deployment Intelligence</h2>
+            <p style="color: #94a3b8; line-height: 1.8;">
+                Core Lab Architecture: **Wazuh (XDR) & Splunk (SIEM)**. 
+                Integrating raw system telemetry with automated alerting rules to monitor and mitigate 
+                advanced persistent threats and lateral movement in real-time.
             </p>
+            <div style="margin-top: 20px;">
+                <span class="tag">Security_Correlation</span>
+                <span class="tag">Threat_Triage</span>
+            </div>
         </div>
     </div>
 
-    <div class="info-columns">
-        <div class="info-card">
-            <h2>Qualifications</h2>
+    <div class="skills-container">
+        <div class="skill-box">
+            <div class="skill-header">🛡️ Security Operations</div>
             <ul>
-                <li>B.Tech in Information Technology</li>
-                <li>Diploma in Electrical & Electronics</li>
-                <li>Cyber & Ethical Hacking - BIA</li>
+                <li>SIEM Management (Information & Event)</li>
+                <li>Log Monitoring & Analysis</li>
+                <li>Alert Triage & Incident Escalation</li>
+                <li>Threat Detection & Basic Response</li>
+                <li>Security Event Correlation</li>
             </ul>
-        </div>
-        <div class="info-card">
-            <h2>Expertise</h2>
-            <ul>
-                <li>SIEM & XDR Engineering</li>
-                <li>Threat Hunting & Triage</li>
-                <li>Network Security Analysis</li>
-            </ul>
-        </div>
-    </div>
-
-    <footer>
-        PAGE IS ACCESSED BY MOHAMMED ABDUL AWAN - CYBERSECURITY SPECIALIST
-    </footer>
-</div>
-
-</body>
-</html>
+            <div style="margin-top:15px;">
+                <span style="font-size: 0.8rem; color: var(--cyber-cyan);">👉 Tools:</span>
+                <span class="tag">Splunk</span> <span class="tag">

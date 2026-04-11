@@ -8,75 +8,77 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&family=Outfit:wght@300;400;600&family=JetBrains+Mono&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #010409;
+            --bg-deep: #020617; /* Very Dark Navy (Not pure black) */
             --accent: #00f2ff;
-            --card-bg: rgba(13, 17, 23, 0.9);
-            --border: rgba(0, 242, 255, 0.3);
-            --text-gray: #8b949e;
+            --card-bg: #0f172a;
+            --border-glow: rgba(0, 242, 255, 0.3);
         }
 
         body {
-            background-color: var(--bg);
+            background-color: var(--bg-deep);
             color: #ffffff;
             margin: 0;
             font-family: 'Outfit', sans-serif;
             overflow-x: hidden;
+            position: relative;
         }
 
-        /* HIGH-VISIBILITY GRID OVERLAY */
-        .grid-overlay {
+        /* FIXED CYBER GRID - Now stays in background */
+        body::before {
+            content: "";
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
             background-image: 
-                linear-gradient(var(--border) 1px, transparent 1px),
-                linear-gradient(90deg, var(--border) 1px, transparent 1px);
-            background-size: 50px 50px;
-            pointer-events: none;
+                linear-gradient(var(--border-glow) 1px, transparent 1px),
+                linear-gradient(90deg, var(--border-glow) 1px, transparent 1px);
+            background-size: 40px 40px;
             z-index: -1;
-            opacity: 0.25;
+            opacity: 0.15;
+            pointer-events: none;
         }
 
-        .container { max-width: 1050px; margin: 0 auto; padding: 20px; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; position: relative; z-index: 1; }
 
-        /* HEADER WITH WAVE */
         header {
-            position: relative;
-            background: linear-gradient(180deg, #0a192f 0%, #010409 100%);
-            padding: 80px 20px 120px;
             text-align: center;
-            border-bottom: 1px solid var(--border);
+            padding: 60px 20px 100px;
+            background: linear-gradient(180deg, #0a192f 0%, var(--bg-deep) 100%);
             border-radius: 0 0 40px 40px;
-            overflow: hidden;
+            border-bottom: 1px solid var(--border-glow);
+            position: relative;
         }
 
         h1 {
             font-family: 'Quicksand', sans-serif;
-            font-size: 3.5rem;
+            font-size: clamp(2rem, 8vw, 3.5rem);
             margin: 0;
-            color: #fff;
-            text-shadow: 0 0 20px rgba(0, 242, 255, 0.5);
+            color: #ffffff;
         }
 
         .subtitle {
-            font-size: 1.2rem;
             color: var(--accent);
             text-transform: uppercase;
-            letter-spacing: 4px;
-            margin-top: 10px;
+            letter-spacing: 3px;
             font-weight: 600;
+            margin-top: 10px;
         }
 
         /* ANIMATED WAVES */
         .waves {
             position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 80px;
+            bottom: 0; left: 0; width: 100%; height: 60px;
         }
+        .parallax > use { animation: move-forever 25s cubic-bezier(.55,.5,.45,.5) infinite; }
+        .parallax > use:nth-child(1) { animation-delay: -2s; fill: rgba(0, 242, 255, 0.2); }
+        .parallax > use:nth-child(2) { animation-delay: -3s; fill: rgba(0, 242, 255, 0.4); }
+        @keyframes move-forever { 0% { transform: translate3d(-90px,0,0); } 100% { transform: translate3d(85px,0,0); } }
 
-        .parallax > use {
-            animation: move-forever 25s cubic-bezier(.55,.5,.45,.5) infinite;
+        .pills { display: flex; justify-content: center; gap: 10px; margin-top: 25px; flex-wrap: wrap; }
+        .pill { 
+            padding: 8px 18px; border: 1px solid var(--accent); border-radius: 50px; 
+            color: white; text-decoration: none; font-size: 0.85rem; background: rgba(0, 242, 255, 0.05);
         }
-        .parallax > use:nth-child(1) { animation-delay: -2s; animation-duration: 7s; fill: rgba(0, 242, 255, 0.2); }
-        .parallax > use:nth-child(2) { animation-delay: -3s; animation
+        .pill:hover { background: var(--accent); color: black; }
+
+        /* INFO SECTIONS */
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top:

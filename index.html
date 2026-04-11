@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohammed Abdul Awan | Cybersecurity Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0a0b10;
+            --card-bg: #161b22;
+            --accent-blue: #58a6ff;
+            --text-main: #c9d1d9;
+            --text-dim: #8b949e;
+            --terminal-green: #3fb950;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+
+        header {
+            text-align: center;
+            padding: 60px 0;
+            border-bottom: 1px solid #30363d;
+        }
+
+        .terminal-text {
+            font-family: 'Courier New', Courier, monospace;
+            color: var(--terminal-green);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        h1 { font-size: 2.5rem; margin: 10px 0; color: white; }
+        .subtitle { color: var(--accent-blue); font-weight: bold; font-size: 1.1rem; }
+
+        .summary-box {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            margin: 40px 0;
+            border-left: 4px solid var(--accent-blue);
+        }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+
+        .card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #30363d;
+            transition: 0.3s;
+        }
+
+        .card:hover { border-color: var(--accent-blue); transform: translateY(-5px); }
+
+        h2 { border-bottom: 2px solid var(--accent-blue); display: inline-block; padding-bottom: 5px; margin-bottom: 25px; }
+
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        td { padding: 10px; border-bottom: 1px solid #30363d; }
+        .skill-name { color: var(--accent-blue); font-weight: bold; }
+
+        .btn {
+            display: inline-block;
+            background: var(--accent-blue);
+            color: var(--bg-dark);
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        .social-links a { color: var(--text-dim); margin: 0 15px; font-size: 1.5rem; transition: 0.3s; }
+        .social-links a:hover { color: var(--accent-blue); }
+
+        .badge {
+            background: #238636;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="terminal-text">> system_init --role "SOC ANALYST"</div>
+        <h1>Mohammed Abdul Awan</h1>
+        <div class="subtitle">SOC Analyst | Cybersecurity Specialist | SIEM & XDR Expert</div>
+        <p><i class="fas fa-map-marker-alt"></i> Dubai, UAE (Open to Relocation)</p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/abdulawan-cyber"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/Awan0727"><i class="fab fa-github"></i></a>
+        </div>
+    </header>
+
+    <section class="summary-box">
+        <h2>Professional Profile</h2>
+        <p>Aspiring SOC Analyst (L1) with a background in HR Administration and IT Onboarding, bringing strong expertise in access management, compliance processes, and structured documentation aligned with security operations. Hands-on exposure to SIEM tools such as <strong>Splunk & Wazuh</strong>, with practical knowledge in log monitoring, alert triage, and threat detection.</p>
+    </section>
+
+    <div class="grid">
+        <div class="card">
+            <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+            <p><strong>B.Tech in Information Technology</strong><br>
+            TKR College of Engineering & Technology (JNTUH) | 2024</p>
+            <p><strong>Diploma in EEE</strong><br>
+            TKR College of Engineering & Technology (SBTET) | 2021</p>
+        </div>
+
+        <div class="card">
+            <h2><i class="fas fa-certificate"></i> Certifications</h2>
+            <ul>
+                <li>Cybersecurity & Ethical Hacking - Boston Institute of Analytics</li>
+                <li>Cybersecurity & Ethical Hacking - Udemy</li>
+                <li>SOC Analyst Training (In Progress)</li>
+            </ul>
+        </div>
+    </div>
+
+    <section style="margin-top: 40px;">
+        <div class="card" style="border-left: 4px solid var(--terminal-green);">
+            <h2><i class="fas fa-project-diagram"></i> Featured Project</h2>
+            <h3>Enterprise SOC Home Lab: Real-Time Detection</h3>
+            <p>Deployed a full-stack Security Operations Center using <strong>Wazuh</strong> and <strong>Splunk</strong>. Simulated Nmap scans, Metasploit exploits, and Brute Force attacks to visualize telemetry and create defensive alerts.</p>
+            <span class="badge">Wazuh</span> <span class="badge">Splunk</span> <span class="badge">Kali Linux</span>
+            <br>
+            <a href="https://github.com/Awan0727/Enterprise-SOC-Wazuh-Splunk" class="btn" target="_blank">View Live Repo</a>
+        </div>
+    </section>
+
+    <div class="grid" style="margin-top: 20px;">
+        <div class="card">
+            <h2><i class="fas fa-tools"></i> Cyber Toolbox</h2>
+            <table>
+                <tr><td class="skill-name">SIEM/XDR</td><td>Splunk, Wazuh</td></tr>
+                <tr><td class="skill-name">Tools</td><td>Nmap, Metasploit, Hydra</td></tr>
+                <tr><td class="skill-name">OS</td><td>Kali Linux, Windows Server</td></tr>
+                <tr><td class="skill-name">Compliance</td><td>Access Control, IAM, Audit Docs</td></tr>
+            </table>
+        </div>
+
+        <div class="card">
+            <h2><i class="fas fa-envelope"></i> Let's Connect</h2>
+            <p>I am looking for SOC Analyst L1 or Cybersecurity Junior roles in Dubai.</p>
+            <p><strong>Email:</strong> mohmmedabdulawan@gmail.com</p>
+            <a href="https://www.linkedin.com/in/abdulawan-cyber" class="btn" target="_blank">Message on LinkedIn</a>
+        </div>
+    </div>
+
+    <footer style="text-align: center; margin-top: 60px; color: var(--text-dim);">
+        <p>&copy; 2026 Mohammed Abdul Awan | Built for Cybersecurity Specialist</p>
+    </footer>
+</div>
+
+</body>
+</html>
